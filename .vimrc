@@ -1,11 +1,11 @@
 " UberVim
 " This .vimrc is a Frankenstein mashup up of Bram Molenaar's sample
 " .vimrc used in Debian repo Vim, gmarik's sample Vundle .vimrc from 
-" github, Lokaltog's vim-powerline mods, for
-"
+" github, Powerline, etc.
+" 
 " 
 " https://github.com/gmarik/vundle
-" https://github.com/Lokaltog/vim-powerline
+" https://github.com/powerline/powerline
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -19,6 +19,7 @@ runtime! debian.vim
 " Use Vim settings, rather than Vi settings.
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
 
 " \"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " load Vundle and all bundles
@@ -40,11 +41,9 @@ filetype off                   " required!
  Plugin 'gmarik/Vundle.vim'
 
  " My Bundles here:
- "Plugin 'repos-scala/scala-vundle'
+ " Plugin 'bling/vim-airline'
 
- "not a Vundle but incluing for reference 
- "https://github.com/Lokaltog/powerline
- "Plugin 'Lokaltog/powerline'
+ "Plugin 'repos-scala/scala-vundle'
 
  " Original repos on github
  "https://github.com/bling/vim-airline
@@ -444,7 +443,7 @@ vnoremap <C-r> <Esc>:%s/<C-r>+//gc<left><left><left>
 " User vim-powerline patched fonts
 " http://www.mahdiyusuf.com/post/24784023641#comment-553653921
 " https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 " https://github.com/scrooloose/nerdtree
 " start NT with $> vim filename:
@@ -466,6 +465,12 @@ nnoremap <C-y> "+y
 vnoremap <C-y> "+y
 nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
+
+" install Powerline
+" https://powerline.readthedocs.org/en/latest/usage/other.html
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " y and p yank to and past from system clipboard 
 " http://stackoverflow.com/questions/11404800/fix-vim-tmux-yank-paste-on-unnamed-register?rq=1
