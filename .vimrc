@@ -36,12 +36,19 @@ filetype off                   " required!
  " call vundle#begin('~/some/path/here')
 
  " let Vundle manage Vundle
+ " Launch vim and run :PluginInstall
+ " To install from command line: vim +PluginInstall +qall
+
  " required! 
+
  "Bundle 'repos-vim/vundle'
  Plugin 'gmarik/Vundle.vim'
 
  " My Bundles here:
- " Plugin 'bling/vim-airline'
+ " https://github.com/fatih/vim-go
+ Plugin 'fatih/vim-go'
+ 
+ "Plugin 'bling/vim-airline'
 
  "Plugin 'repos-scala/scala-vundle'
 
